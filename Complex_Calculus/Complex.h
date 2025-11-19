@@ -14,7 +14,7 @@ struct Complex{
         return {x + c.x, y + c.y};
     }
 
-    // Substractiom Operator
+    //Subtraction Operator
 
     Complex operator-(const Complex &c) const {
         return {x - c.x, y - c.y};
