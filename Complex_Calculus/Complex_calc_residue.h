@@ -24,7 +24,7 @@ namespace cc {
         double delta_y = std::abs(y_max - y_min) / N;
 
         std::vector<Complex> singularity_set;
-        singularity_set.reserve(N * N);  // at most N^2 points
+        singularity_set.reserve(N);  // at most N points
 
         for (int ky = 0; ky < N; ++ky) {
             for (int kx = 0; kx < N; ++kx) {
@@ -67,7 +67,7 @@ namespace cc {
                 // g_m(z) = (z - z0)^m * f(z)
                 auto g_m = [=](Complex z) -> Complex {
                     return cc::pow_int(z - z0, m) * f(z);
-                };
+                }; // lamda functions are a bit confusing they seems to me it is a method while defining functions inside the nested structures, but it has also some language source reasons
 
                 if (cc::is_analytic(g_m, z0)) {
                     d = m;
